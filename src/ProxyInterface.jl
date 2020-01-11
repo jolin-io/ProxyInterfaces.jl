@@ -60,6 +60,7 @@ macro array_mutable(ProxyType)
   quote
     @array($ProxyType)
     Base.setindex!(p::$ProxyType, args...) = Base.setindex!(ProxyInterface.array(p), args...)
+    Base.empty!(p::$ProxyType) = Base.empty!(ProxyInterface.array(p))
   end
 end
 
@@ -81,6 +82,7 @@ macro dict_mutable(ProxyType)
   quote
     @dict($ProxyType)
     Base.setindex!(p::$ProxyType, args...) = Base.setindex!(ProxyInterface.dict(p), args...)
+    Base.empty!(p::$ProxyType) = Base.empty!(ProxyInterface.dict(p))
   end
 end
 end # module
