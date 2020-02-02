@@ -11,6 +11,9 @@ macro iterator(ProxyType)
     Base.eltype(p::$ProxyType) = Base.eltype(ProxyInterface.iterator(p))
     Base.length(p::$ProxyType) = Base.length(ProxyInterface.iterator(p))
     Base.size(p::$ProxyType) = Base.size(ProxyInterface.iterator(p))
+    Base.size(p::$ProxyType, d) = Base.size(ProxyInterface.iterator(p), d)
+    Base.axes(p::$ProxyType) = Base.axes(ProxyInterface.iterator(p))  # analog to Base.Generator
+    Base.ndims(p::$ProxyType) = Base.ndims(ProxyInterface.iterator(p))
   end
 end
 
