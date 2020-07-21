@@ -1,4 +1,5 @@
 module ProxyInterface
+using Compat
 
 function iterator end
 macro iterator(ProxyType)
@@ -14,6 +15,9 @@ macro iterator(ProxyType)
     Base.size(p::$ProxyType, d) = Base.size(ProxyInterface.iterator(p), d)
     Base.axes(p::$ProxyType) = Base.axes(ProxyInterface.iterator(p))  # analog to Base.Generator
     Base.ndims(p::$ProxyType) = Base.ndims(ProxyInterface.iterator(p))
+    # we include foreach to iterator, as it directly corresponds to a for loop
+    Base.foreach(f, p::$ProxyType) = Base.foreach(f, ProxyInterface.iterator(p))
+    # we don't include Base.map, as it requires constructing the Proxy, which we don't know how to do it
   end
 end
 
