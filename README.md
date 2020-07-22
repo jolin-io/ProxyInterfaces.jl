@@ -18,15 +18,16 @@ using ProxyInterfaces
 ```
 
 It gives you access to macros which define standard interfaces for your custom proxy type. Currently, the following interfaces are supported:
-* iterator
-* indexing
-* indexing_mutable
-* array
-* array_mutable
-* dict
-* dict_mutable
+* [iterator](test/iterator.jl)
+* [indexing](test/indexing.jl)
+* [indexing_mutable](test/indexing.jl)
+* [array](test/array.jl)
+* [array_mutable](test/array.jl)
+* [dict](test/dict.jl)
+* [dict_mutable](test/dict.jl)
 
-In addition it also exports the famous `@forward MyWrapper.myfield func1, func2, func3` helper.
+In addition it also exports the famous `@forward MyWrapper.myfield func1, func2, func3` helper, for quick method
+forwarding to a struct field.
 
 
 Usage
