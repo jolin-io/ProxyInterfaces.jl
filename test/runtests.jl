@@ -1,3 +1,6 @@
+using Test
+using ProxyInterface
+
 # @forward
 # --------
 
