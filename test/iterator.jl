@@ -20,10 +20,13 @@ myiterator = MyIterator([11,22,33])
 @test !(myiterator == MyIterator([11, 22, 33]))
 @test 22 in myiterator  # works via iterator interface
 @test Base.IteratorEltype(myiterator) isa Base.HasEltype
+@test Base.IteratorEltype(typeof(myiterator)) isa Base.HasEltype
 @test eltype(myiterator) == Int
-@test Base.IteratorSize(myiterator) isa Base.HasShape
+@test eltype(typeof(myiterator)) == Int
+@test Base.IteratorSize(typeof(myiterator)) isa Base.HasShape
 @test length(myiterator) == 3
 @test size(myiterator) == (3,)
+@test size(myiterator, 1) == 3
 @test axes(myiterator) == axes(myiterator.value)
 @test ndims(myiterator) == 1
 

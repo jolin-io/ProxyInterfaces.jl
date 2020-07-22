@@ -20,6 +20,7 @@ myarray = MyArray([11,22,33])
 @test eltype(myarray) == Int
 @test length(myarray) == 3
 @test size(myarray) == (3,)
+@test size(myarray, 1) == 3
 @test myarray[1] == 11
 @test myarray[end] == 33
 @test firstindex(myarray) == 1

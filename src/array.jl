@@ -13,6 +13,7 @@ macro array(ProxyType)
     Base.:(==)(p1::$ProxyType, p2::$ProxyType) = ProxyInterfaces.array(p1) == ProxyInterfaces.array(p2)
 
     Base.size(p::$ProxyType) = Base.size(ProxyInterfaces.array(p))
+    Base.size(p::$ProxyType, d) = Base.size(ProxyInterfaces.array(p), d)
     Base.getindex(p::$ProxyType, args...)	= Base.getindex(ProxyInterfaces.array(p), args...)
     Base.firstindex(p::$ProxyType) = Base.firstindex(ProxyInterfaces.array(p))
     Base.lastindex(p::$ProxyType)	= Base.lastindex(ProxyInterfaces.array(p))
