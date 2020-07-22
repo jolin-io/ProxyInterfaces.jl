@@ -1,5 +1,5 @@
-name = "ProxyInterface"
-uuid = "90c4b210-f34a-11e9-1a87-5d0d3aaf0cab"
+name = "ProxyInterfaces"
+uuid = "9b3bf0c4-f070-48bc-ae01-f2584e9c23bc"
 authors = ["Sahm Stephan <stephan.sahm@gmx.de>"]
 version = "1.0.0"
 

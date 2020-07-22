@@ -1,4 +1,4 @@
-module ProxyInterface
+module ProxyInterfaces
 using Compat
 export @forward
 

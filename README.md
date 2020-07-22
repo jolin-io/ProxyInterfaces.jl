@@ -1,20 +1,20 @@
-ProxyInterface
-==============
+ProxyInterfaces
+===============
 
-[![Build Status](https://github.com/schlichtanders/ProxyInterface.jl/workflows/CI/badge.svg)](https://github.com/schlichtanders/ProxyInterface.jl/actions)
-[![Coverage](https://codecov.io/gh/schlichtanders/ProxyInterface.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/schlichtanders/ProxyInterface.jl)
+[![Build Status](https://github.com/schlichtanders/ProxyInterfaces.jl/workflows/CI/badge.svg)](https://github.com/schlichtanders/ProxyInterfaces.jl/actions)
+[![Coverage](https://codecov.io/gh/schlichtanders/ProxyInterfaces.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/schlichtanders/ProxyInterfaces.jl)
 
 Install it like
 ```julia
 using Pkg
 pkg"registry add https://github.com/JuliaRegistries/General"  # central julia registry
 pkg"registry add https://github.com/schlichtanders/SchlichtandersJuliaRegistry.jl"  # custom registry
-pkg"add ProxyInterface"
+pkg"add ProxyInterfaces"
 ```
 
 Load it like
 ``` julia
-using ProxyInterface
+using ProxyInterfaces
 ```
 
 It gives you access to macros which define standard interfaces for your custom proxy type. Currently, the following interfaces are supported:
@@ -58,14 +58,14 @@ haskey(d, :b) # true
 ```
 
 Only these three steps are needed for every ProxyInterface `respectivename`:
-* overwrite `ProxyInterface.respectivename(::Type{YourProxyType})` to define how the proxy TYPE maps to the original type
-* overwrite `ProxyInterface.respectivename(p::YourProxyType)` to extract the underlying original out of the given proxy instance
-* call `ProxyInterface.@respectivename`
+* overwrite `ProxyInterfaces.respectivename(::Type{YourProxyType})` to define how the proxy TYPE maps to the original type
+* overwrite `ProxyInterfaces.respectivename(p::YourProxyType)` to extract the underlying original out of the given proxy instance
+* call `ProxyInterfaces.@respectivename`
 
 
 Contributing
 ------------
 
-Help is highly appreciated. There are many interfaces in Julia which are defined by documentation rather than code. This package `ProxyInterface` can work as a code reference.
+Help is highly appreciated. There are many interfaces in Julia which are defined by documentation rather than code. This package `ProxyInterfaces` can work as a code reference.
 
 In case you are missing a standard interface or a concrete function for an already supported interface, please open an issue. Pull request are also highly welcome.

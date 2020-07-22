@@ -1,5 +1,5 @@
 using Test
-using ProxyInterface
+using ProxyInterfaces
 
 # @forward
 # --------
