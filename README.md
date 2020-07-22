@@ -14,7 +14,7 @@ pkg"add ProxyInterface"
 
 Load it like
 ``` julia
-import ProxyInterface
+using ProxyInterface
 ```
 
 It gives you access to macros which define standard interfaces for your custom proxy type. Currently, the following interfaces are supported:
@@ -25,6 +25,8 @@ It gives you access to macros which define standard interfaces for your custom p
 * array_mutable
 * dict
 * dict_mutable
+
+In addition it also exports the famous `@forward MyWrapper.myfield func1, func2, func3` helper.
 
 
 Usage
