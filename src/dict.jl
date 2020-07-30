@@ -2,8 +2,6 @@ function dict end
 macro dict(ProxyType)
   ProxyType = esc(ProxyType)
   quote
-    # as a dict wrapper usually identifies itself as the dict, we forward ==
-    Base.:(==)(p1::$ProxyType, p2::$ProxyType) = ProxyInterfaces.dict(p1) == ProxyInterfaces.dict(p2)
     Base.getindex(p::$ProxyType, args...)	= Base.getindex(ProxyInterfaces.dict(p), args...)
     Base.length(p::$ProxyType) = Base.length(ProxyInterfaces.dict(p))
     Base.in(a, p::$ProxyType) = Base.in(a, ProxyInterfaces.dict(p))

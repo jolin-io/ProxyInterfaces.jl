@@ -22,11 +22,11 @@ mydict = MyDict(Dict(:a => 4))
 @test collect(values(mydict)) == [4]
 @test collect(keys(mydict)) == [:a]
 
-@test mydict == MyDict(Dict(:a => 4))
+@test mydict.value == Dict(:a => 4)
 @test merge(
   MyDict(Dict(:a => 4, :b => 5)),
   MyDict(Dict(:b => 32, :c => "hi"))
-) == MyDict(Dict(:a => 4, :b => 32, :c => "hi"))
+).value == Dict(:a => 4, :b => 32, :c => "hi")
 
 @test_throws MethodError mydict[:b] = 42
 @test_throws MethodError empty!(mydict)
@@ -48,4 +48,4 @@ mydict_mutable[:b] = 42
 @test mydict_mutable[:b] == 42
 
 empty!(mydict_mutable)
-@test mydict_mutable == MyMutableDict(Dict())
+@test mydict_mutable.value == Dict()

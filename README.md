@@ -18,13 +18,13 @@ using ProxyInterfaces
 ```
 
 It gives you access to macros which define standard interfaces for your custom proxy type. Currently, the following interfaces are supported:
-* [iterator](test/iterator.jl)
-* [indexing](test/indexing.jl)
-* [indexing_mutable](test/indexing.jl)
-* [array](test/array.jl)
-* [array_mutable](test/array.jl)
-* [dict](test/dict.jl)
-* [dict_mutable](test/dict.jl)
+* iterator ([implementation](src/iterator.jl), [tests](test/iterator.jl))
+* indexing ([implementation](src/indexing.jl), [tests](test/indexing.jl))
+* indexing_mutable ([implementation](src/indexing.jl), [tests](test/indexing.jl))
+* array ([implementation](src/array.jl), [tests](test/array.jl))
+* array_mutable ([implementation](src/array.jl), [tests](test/array.jl))
+* dict ([implementation](src/dict.jl), [tests](test/dict.jl))
+* dict_mutable ([implementation](src/dict.jl), [tests](test/dict.jl))
 
 In addition it also exports the famous `@forward MyWrapper.myfield func1, func2, func3` helper, for quick method
 forwarding to a struct field.

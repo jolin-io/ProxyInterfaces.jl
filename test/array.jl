@@ -15,7 +15,7 @@ ProxyInterfaces.@array MyArray
 
 
 myarray = MyArray([11,22,33])
-@test myarray == MyArray([11, 22, 33])
+@test myarray.value == [11, 22, 33]
 @test 22 in myarray
 @test eltype(myarray) == Int
 @test length(myarray) == 3
@@ -61,4 +61,4 @@ myarray_mutable[2] = 44
 
 empty!(myarray_mutable)
 @test isempty(myarray_mutable)
-@test fill!(similar(myarray_mutable, Float32), 0) == MyMutableArray(fill!(similar(myarray_mutable.value, Float32), 0))
+@test fill!(similar(myarray_mutable, Float32), 0).value == fill!(similar(myarray_mutable.value, Float32), 0)
