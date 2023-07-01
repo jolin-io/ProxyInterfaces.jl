@@ -4,14 +4,8 @@ ProxyInterfaces
 [![Build Status](https://github.com/schlichtanders/ProxyInterfaces.jl/workflows/CI/badge.svg)](https://github.com/schlichtanders/ProxyInterfaces.jl/actions)
 [![Coverage](https://codecov.io/gh/schlichtanders/ProxyInterfaces.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/schlichtanders/ProxyInterfaces.jl)
 
-Install it like
+Install/use it like
 ```julia
-using Pkg
-pkg"add ProxyInterfaces"
-```
-
-Load it like
-``` julia
 using ProxyInterfaces
 ```
 
