@@ -14,6 +14,15 @@ ProxyInterfaces.@dict MyDict
 
 mydict = MyDict(Dict(:a => 4))
 
+# testing iterator methods
+@test eltype(mydict) == Pair{Symbol, Int}
+@test length(mydict) == 1
+@test Base.IteratorSize(mydict) isa Base.HasLength
+@test Base.IteratorEltype(mydict) isa Base.HasEltype
+@test_throws MethodError size(mydict)
+@test_throws MethodError ndims(mydict)
+
+# testing dict methods
 @test mydict[:a] == 4
 @test length(mydict) == 1
 @test (:a => 4) in mydict

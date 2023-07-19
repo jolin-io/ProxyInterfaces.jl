@@ -5,7 +5,9 @@ export @forward
     @forward T.x functions...
 Define methods for `functions` on type `T`, which call the relevant function
 on the field `x`.
+
 # Example
+
 ```julia
 struct Wrapper
     x
@@ -29,6 +31,6 @@ end
 include("iterator.jl")
 include("indexing.jl")
 include("array.jl")  # depends on @iterator
-include("dict.jl")
+include("dict.jl")  # depends on @iterator
 
 end # module

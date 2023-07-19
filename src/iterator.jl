@@ -12,6 +12,8 @@ macro iterator(ProxyType)
     Base.size(p::$ProxyType, d) = Base.size(ProxyInterfaces.iterator(p), d)
     Base.axes(p::$ProxyType) = Base.axes(ProxyInterfaces.iterator(p))  # analog to Base.Generator
     Base.ndims(p::$ProxyType) = Base.ndims(ProxyInterfaces.iterator(p))
+    # TODO in a version 2.x maybe do not include foreach, as it already has a fallback for iterators
+    # TODO in a version 2.x maybe do not include map, as not every iterator supports map
     # we include foreach to iterator, as it directly corresponds to a for loop
     Base.foreach(f, p::$ProxyType) = Base.foreach(f, ProxyInterfaces.iterator(p))
     Base.map(f, p::$ProxyType) = $ProxyType(Base.map(f, ProxyInterfaces.iterator(p)))

@@ -1,7 +1,13 @@
 function dict end
+
 macro dict(ProxyType)
   ProxyType = esc(ProxyType)
   quote
+    # dict includes iterator by default, as this will almost always be what is expected
+    ProxyInterfaces.iterator(p::$ProxyType) = dict(p)
+    ProxyInterfaces.iterator(p::Type{<:$ProxyType}) = dict(p)
+    @iterator($ProxyType)
+
     Base.getindex(p::$ProxyType, args...)	= Base.getindex(ProxyInterfaces.dict(p), args...)
     Base.length(p::$ProxyType) = Base.length(ProxyInterfaces.dict(p))
     Base.in(a, p::$ProxyType) = Base.in(a, ProxyInterfaces.dict(p))
