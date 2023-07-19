@@ -1,7 +1,7 @@
 ProxyInterfaces
 ===============
 
-[![Build Status](https://github.com/jolin-io/ProxyInterfaces.jl/workflows/CI/badge.svg)](https://github.com/jolin-io/ProxyInterfaces.jl/actions/workflows/ci.yml?query=branch%3Amain)
+[![Build Status](https://github.com/jolin-io/ProxyInterfaces.jl/workflows/CI/badge.svg?branch=main)](https://github.com/jolin-io/ProxyInterfaces.jl/actions/workflows/ci.yml?query=branch%3Amain)
 [![Coverage](https://codecov.io/gh/jolin-io/ProxyInterfaces.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/jolin-io/ProxyInterfaces.jl)
 
 Install/use it like
