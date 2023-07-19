@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2023-07-19
+### Fixed
+- warning of method length (from @iterator) being overwritten (from @dict)
+
 ## [1.1.0] - 2023-07-19
 ### Added
 - `@dict` will now also add iterator methods

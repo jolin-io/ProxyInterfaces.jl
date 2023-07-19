@@ -9,7 +9,6 @@ macro dict(ProxyType)
     @iterator($ProxyType)
 
     Base.getindex(p::$ProxyType, args...)	= Base.getindex(ProxyInterfaces.dict(p), args...)
-    Base.length(p::$ProxyType) = Base.length(ProxyInterfaces.dict(p))
     Base.in(a, p::$ProxyType) = Base.in(a, ProxyInterfaces.dict(p))
     Base.haskey(p::$ProxyType, key) = Base.haskey(ProxyInterfaces.dict(p), key)
     Base.keys(p::$ProxyType) = Base.keys(ProxyInterfaces.dict(p))
