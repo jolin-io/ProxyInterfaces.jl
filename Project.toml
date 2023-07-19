@@ -1,7 +1,7 @@
 name = "ProxyInterfaces"
 uuid = "9b3bf0c4-f070-48bc-ae01-f2584e9c23bc"
 authors = ["Sahm Stephan <stephan.sahm@gmx.de>"]
-version = "1.1.0"
+version = "1.1.1"
 
 [compat]
 julia = "1"
